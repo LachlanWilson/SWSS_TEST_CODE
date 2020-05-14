@@ -1,19 +1,10 @@
 // SWSS - C++.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
-int Sensor() {
-  //NIR Readings
+#include <iostream>
+using namespace std;
 
-  int R = sensor.getR();
-  int S = sensor.getS();
-  int T = sensor.getT();
-  int U = sensor.getU();
-  int V = sensor.getV();
-  int W = sensor.getW();
-
-  int SensorData[6] = {R,S,T,U,V,W};
-  
-  return SensorData;
+int Sensor(int test) {
+  return test;
 }
 
 void MechElements(int SensorInfo) {
@@ -45,8 +36,14 @@ int DataInterpret(int sensorData[6]) {
 
 void loop(){
   while (true) {
-    int sensorData = Sensor(); // return number
+    int sensorData = Sensor(test()); // return number
     int SensorInterp = DataInterpret(sensorData);
     MechElements(SensorInterp);
   }
+}
+
+int test(){
+  int testValues[] = (10,10,0,0,0,0);
+  cout << "Hello World!";
+  return testValues;
 }
